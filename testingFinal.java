@@ -107,7 +107,7 @@ public class testingFinal {
 
     }
 
-    @Test(priority = 6)
+    @Test(priority = 5)
     public void storeSelectorTest() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
@@ -126,7 +126,7 @@ public class testingFinal {
         driver.quit();
     }
 
-    @Test(priority = 7)
+    @Test(priority = 6)
     public void cartTest() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
@@ -156,7 +156,30 @@ public class testingFinal {
         Thread.sleep(1500);
 
         driver.quit();
-    } 
+    }
+
+    @Test(priority = 7)
+    public void resetPasswordMailCodeTest() throws InterruptedException {
+        // Init driver
+        WebDriver driver = new FirefoxDriver();
+        driver.get("http://basspro.com");
+        driver.manage().window().maximize();
+        Thread.sleep(1500);
+
+        // Click account button, then forgot password link
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[3]/div[1]/div[1]/div[3]/div/div[2]/div/div[1]/div/div[1]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("Header_GlobalLogin_WC_AccountDisplay_links_1")).click();
+        Thread.sleep(2000);
+
+        // Send keys to email input, and click Send code
+        driver.findElement(By.id("WC_PasswordResetForm_FormInput_logonId_In_ResetPasswordForm_1"))
+                .sendKeys("spamforpixelspark@gmail.com");
+        driver.findElement(By.id("WC_PasswordResetForm_links_3")).click();
+        Thread.sleep(2000);
+
+        driver.quit();
+    }
 
 
 }
