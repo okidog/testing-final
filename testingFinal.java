@@ -2,10 +2,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-public class testingFinal {
+public class testingFinal { /*
     @Test(priority = 1)
     public void login() throws InterruptedException {
         // Init driver
@@ -182,6 +183,25 @@ public class testingFinal {
         driver.findElement(By.id("WC_PasswordResetForm_links_3")).click();
         Thread.sleep(2000);
 
+        driver.quit();
+    } */
+    @Test(priority = 8)
+    public void hotItemTest() throws InterruptedException {
+        // Init driver
+        WebDriver driver = new FirefoxDriver();
+        JavascriptExecutor exe = (JavascriptExecutor) driver;
+        driver.get("http://basspro.com");
+        driver.manage().window().maximize();
+        Thread.sleep(2500);
+
+        // Scroll to Hot This Week
+        exe.executeScript("window.scroll(0,800", "");
+        for (int i = 0; i <= 5; i++) {
+            driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div/section/div/div[1]/button[2]")).click();
+            Thread.sleep(750);
+        }
+
+        Thread.sleep(1500);
         driver.quit();
     }
 
