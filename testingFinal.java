@@ -13,7 +13,7 @@ public class testingFinal {
         WebDriver driver = new FirefoxDriver();
         driver.get("http://basspro.com");
         driver.manage().window().maximize();
-        Thread.sleep(1500);
+        Thread.sleep(2500);
 
         // Click club, then click manage account
         driver.findElement(By.id("clubLink")).click();
@@ -46,7 +46,7 @@ public class testingFinal {
         driver.findElement(By.id("departmentButton_3074457345616732421")).click();
         Thread.sleep(500);
         driver.findElement(By.id("departmentButton_3074457345616732432")).click();
-        Thread.sleep(1500);
+        Thread.sleep(4000);
 
         driver.quit();
     }
@@ -61,7 +61,7 @@ public class testingFinal {
 
         // Click fishing category, then go to fishing subcategories (fishing main page)
         driver.findElement(By.id("departmentButton_3074457345616732393")).click();
-        Thread.sleep(250);
+        Thread.sleep(1500);
         driver.findElement(By.id("departmentLink_3074457345616732393")).click();
         Thread.sleep(2500);
 
@@ -123,7 +123,7 @@ public class testingFinal {
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div[1]")).click();
         Thread.sleep(500);
         driver.findElement(By.id("storeLocInp"))
-                .sendKeys("33031", Keys.ENTER);
+                .sendKeys("33966", Keys.ENTER);
         Thread.sleep(500);
         driver.findElement(By.xpath("/html/body/div[8]/div[2]/div[4]/div[3]/div[1]/div/button")).click();
         Thread.sleep(4000);
@@ -158,7 +158,11 @@ public class testingFinal {
         Thread.sleep(2500);
         exe.executeScript("window.scroll(0,800)","");
         driver.findElement(By.id("SKU_List_Widget_Add2CartButton_3074457345623450858_table")).click();
-        Thread.sleep(1500);
+        Thread.sleep(7500);
+
+        // Navigate to cart and display contents
+        driver.findElement(By.id("GotoCartButton2")).click();
+        Thread.sleep(6000);
 
         driver.quit();
     }
@@ -181,7 +185,7 @@ public class testingFinal {
         driver.findElement(By.id("WC_PasswordResetForm_FormInput_logonId_In_ResetPasswordForm_1"))
                 .sendKeys("spamforpixelspark@gmail.com");
         driver.findElement(By.id("WC_PasswordResetForm_links_3")).click();
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         driver.quit();
     }
