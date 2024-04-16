@@ -6,10 +6,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-/* TODO ---------------------------
-    Implement going to item from hot items page
- */
-
 public class hotItem {
     public WebDriver driver = new FirefoxDriver();
     public JavascriptExecutor exe = (JavascriptExecutor) driver;
@@ -21,19 +17,13 @@ public class hotItem {
     }
 
     @AfterTest
-    public void closeDriver() {
+    public void closeDriver() throws InterruptedException {
+        Thread.sleep(4500);
         driver.quit();
     }
 
     @Test(priority = 1)
     public void hotItemTest() throws InterruptedException {
-        // Init driver
-        WebDriver driver = new FirefoxDriver();
-        JavascriptExecutor exe = (JavascriptExecutor) driver;
-        driver.get("http://basspro.com");
-        driver.manage().window().maximize();
-        Thread.sleep(2500);
-
         // Scroll to Hot This Week
         exe.executeScript("window.scroll(0,600)", "");
 
@@ -44,5 +34,20 @@ public class hotItem {
         }
 
         Thread.sleep(1500);
+    }
+
+    @Test(priority = 2)
+    public void hotItemViewTest() throws InterruptedException {
+        // Scroll to Hot This Week
+        exe.executeScript("window.scroll(0,600)", "");
+
+        // Click first product, then navigate back
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div/section/div/div[2]/div/div[9]/a")).click();
+        Thread.sleep(2000);
+        driver.navigate().back();
+
+        // Scroll back to Hot This Week, click second product
+        exe.executeScript("window.scroll(0,600)", "");
+        driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/div/div/section/div/div[2]/div/div[10]/a")).click();
     }
 }

@@ -7,10 +7,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-/* TODO --------------------------
-    Import code from previous login funct (check github!)
- */
-
 public class login {
 
     public WebDriver driver = new FirefoxDriver();
@@ -42,5 +38,17 @@ public class login {
                 .sendKeys("GeorgeForeman1", Keys.ENTER);
         Thread.sleep(5000);
 
+    }
+
+    @Test(priority = 2)
+    public void loginHeader() throws InterruptedException {
+        // Click account button, submit credentials and login
+        driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[3]/div[1]/div[1]/div[3]/div/div[2]/div/div[1]/div/div[1]")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("Header_GlobalLogin_WC_AccountDisplay_FormInput_logonId_In_Logon_1"))
+                .sendKeys("spamforpixelspark@gmail.com");
+        driver.findElement(By.id("Header_GlobalLogin_WC_AccountDisplay_FormInput_logonPassword_In_Logon_1"))
+                .sendKeys("GeorgeForeman1", Keys.ENTER);
+        Thread.sleep(10000);
     }
 }
