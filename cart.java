@@ -2,28 +2,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class cart {
-
-    public WebDriver driver = new FirefoxDriver();
-    public JavascriptExecutor exe = (JavascriptExecutor) driver;
-    @BeforeTest
-    public void initDriver() throws InterruptedException {
+    @Test(priority = 1)
+    public void addToCart() throws InterruptedException {
+        // Init driver
+        WebDriver driver = new FirefoxDriver();
+        JavascriptExecutor exe = (JavascriptExecutor) driver;
         driver.get("http://basspro.com");
         driver.manage().window().maximize();
         Thread.sleep(2500);
-    }
 
-    @AfterTest
-    public void closeDriver() {
-        driver.quit();
-    }
-
-    @Test(priority = 1)
-    public void addToCart() throws InterruptedException {
         // Click fishing category, then go to fishing subcategories (fishing main page)
         driver.findElement(By.id("departmentButton_3074457345616732393")).click();
         Thread.sleep(250);
@@ -43,10 +33,19 @@ public class cart {
         exe.executeScript("window.scroll(0,800)","");
         driver.findElement(By.id("SKU_List_Widget_Add2CartButton_3074457345623450858_table")).click();
         Thread.sleep(7500);
+
+        driver.quit();
     }
 
     @Test(priority = 2)
     public void removeFromCart() throws InterruptedException {
+        // Init driver
+        WebDriver driver = new FirefoxDriver();
+        JavascriptExecutor exe = (JavascriptExecutor) driver;
+        driver.get("http://basspro.com");
+        driver.manage().window().maximize();
+        Thread.sleep(2500);
+
         // First, add item to cart:
         // Click fishing category, then go to fishing subcategories (fishing main page)
         driver.findElement(By.id("departmentButton_3074457345616732393")).click();
@@ -75,5 +74,7 @@ public class cart {
 
         // Click remove
         driver.findElement(By.id("WC_OrderItemDetailsf_links_2_")).click();
+
+        driver.quit();
     }
 }
