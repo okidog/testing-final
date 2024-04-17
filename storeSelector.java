@@ -13,20 +13,14 @@ import org.testng.annotations.Test;
 public class storeSelector {
     public WebDriver driver = new FirefoxDriver();
     public JavascriptExecutor exe = (JavascriptExecutor) driver;
-    @BeforeTest
-    public void initDriver() throws InterruptedException {
-        driver.get("http://basspro.com");
-        driver.manage().window().maximize();
-        Thread.sleep(2500);
-    }
-
-    @AfterTest
-    public void closeDriver() {
-        driver.quit();
-    }
 
     @Test(priority = 1)
     public void selectFtMyers() throws InterruptedException {
+        // Init driver
+        driver.get("http://basspro.com");
+        driver.manage().window().maximize();
+        Thread.sleep(2500);
+
         // Click store selector, input zip code, save store
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div[1]")).click();
         Thread.sleep(500);
@@ -35,6 +29,8 @@ public class storeSelector {
         Thread.sleep(500);
         driver.findElement(By.xpath("/html/body/div[8]/div[2]/div[4]/div[3]/div[1]/div/button")).click();
         Thread.sleep(4000);
+
+        driver.quit();
     }
 
 }

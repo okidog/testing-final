@@ -13,20 +13,14 @@ import org.testng.annotations.Test;
 public class category {
     public WebDriver driver = new FirefoxDriver();
     public JavascriptExecutor exe = (JavascriptExecutor) driver;
-    @BeforeTest
-    public void initDriver() throws InterruptedException {
-        driver.get("http://basspro.com");
-        driver.manage().window().maximize();
-        Thread.sleep(2500);
-    }
-
-    @AfterTest
-    public void closeDriver() {
-        driver.quit();
-    }
 
     @Test(priority = 1)
     public void categoryTest() throws InterruptedException {
+        // Init driver
+        driver.get("http://basspro.com");
+        driver.manage().window().maximize();
+        Thread.sleep(2500);
+
         // Cycle through four different categories
         driver.findElement(By.id("departmentButton_3074457345616732393")).click(); // Fishing
         Thread.sleep(500);
@@ -36,6 +30,8 @@ public class category {
         Thread.sleep(500);
         driver.findElement(By.id("departmentButton_3074457345616732432")).click();
         Thread.sleep(4000);
+
+        driver.quit();
     }
 
 }

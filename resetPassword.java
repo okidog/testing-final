@@ -14,20 +14,14 @@ import org.testng.annotations.Test;
 public class resetPassword {
     public WebDriver driver = new FirefoxDriver();
     public JavascriptExecutor exe = (JavascriptExecutor) driver;
-    @BeforeTest
-    public void initDriver() throws InterruptedException {
-        driver.get("http://basspro.com");
-        driver.manage().window().maximize();
-        Thread.sleep(2500);
-    }
-
-    @AfterTest
-    public void closeDriver() {
-        driver.quit();
-    }
 
     @Test(priority = 1)
     public void resetPassword() throws InterruptedException {
+        // Init driver
+        driver.get("http://basspro.com");
+        driver.manage().window().maximize();
+        Thread.sleep(2500);
+
         // Click account button, then forgot password link
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[3]/div[1]/div[1]/div[3]/div/div[2]/div/div[1]/div/div[1]")).click();
         Thread.sleep(2000);
@@ -39,5 +33,7 @@ public class resetPassword {
                 .sendKeys("spamforpixelspark@gmail.com");
         driver.findElement(By.id("WC_PasswordResetForm_links_3")).click();
         Thread.sleep(4000);
+
+        driver.quit();
     }
 }
