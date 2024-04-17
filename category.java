@@ -1,9 +1,6 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /* TODO --------------------------
@@ -11,12 +8,10 @@ import org.testng.annotations.Test;
  */
 
 public class category {
-    public WebDriver driver = new FirefoxDriver();
-    public JavascriptExecutor exe = (JavascriptExecutor) driver;
-
     @Test(priority = 1)
     public void categoryTest() throws InterruptedException {
         // Init driver
+        WebDriver driver = new FirefoxDriver();
         driver.get("http://basspro.com");
         driver.manage().window().maximize();
         Thread.sleep(2500);

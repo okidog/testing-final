@@ -2,17 +2,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class hotItem {
-    public WebDriver driver = new FirefoxDriver();
-    public JavascriptExecutor exe = (JavascriptExecutor) driver;
 
     @Test(priority = 1)
     public void hotItemTest() throws InterruptedException {
         // Init driver
+        WebDriver driver = new FirefoxDriver();
+        JavascriptExecutor exe = (JavascriptExecutor) driver;
         driver.get("http://basspro.com");
         driver.manage().window().maximize();
         Thread.sleep(2500);
@@ -34,6 +32,8 @@ public class hotItem {
     @Test(priority = 2)
     public void hotItemViewTest() throws InterruptedException {
         // Init driver
+        WebDriver driver = new FirefoxDriver();
+        JavascriptExecutor exe = (JavascriptExecutor) driver;
         driver.get("http://basspro.com");
         driver.manage().window().maximize();
         Thread.sleep(2500);

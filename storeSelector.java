@@ -3,20 +3,18 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 /* TODO --------------------------
     Build a test to select different store (PSL?)
  */
 public class storeSelector {
-    public WebDriver driver = new FirefoxDriver();
-    public JavascriptExecutor exe = (JavascriptExecutor) driver;
 
     @Test(priority = 1)
     public void selectFtMyers() throws InterruptedException {
         // Init driver
+        WebDriver driver = new FirefoxDriver();
+        JavascriptExecutor exe = (JavascriptExecutor) driver;
         driver.get("http://basspro.com");
         driver.manage().window().maximize();
         Thread.sleep(2500);
