@@ -39,7 +39,7 @@ public class filterSortTest {
     }
 
     @Test(priority = 2)
-    public void filterSort2() throws InterruptedException {
+    public void filterSortBaitcastReels() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
         driver.get("http://basspro.com");
