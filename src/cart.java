@@ -1,3 +1,5 @@
+package src;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -29,8 +31,8 @@ public class cart {
 
         // Click Daiwa Tanacom 1200 Electric Reel
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[3]/div[2]/div/div/div/div[4]/div[2]/div[1]/div[6]/div/div/div[1]/div[2]/div[1]")).click();
-        Thread.sleep(2500);
-        exe.executeScript("window.scroll(0,800)","");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div[8]/div[2]/div/div[3]/div[3]/div[7]/div/a")).click();
         driver.findElement(By.id("SKU_List_Widget_Add2CartButton_3074457345623450858_table")).click();
         Thread.sleep(7500);
 
@@ -60,20 +62,20 @@ public class cart {
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[3]/div[2]/div/div/div[2]/div[3]/div/div[1]/div")).click();
         Thread.sleep(2500);
 
-        // Click Daiwa Tanacom 1200 Electric Reel
+        // Click Daiwa Tanacom 1200 Electric Reel, Shop Below, and Add To Cart
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[3]/div[2]/div/div/div/div[4]/div[2]/div[1]/div[6]/div/div/div[1]/div[2]/div[1]")).click();
-        Thread.sleep(2500);
-        exe.executeScript("window.scroll(0,800)","");
+        Thread.sleep(5000);
+        driver.findElement(By.xpath("/html/body/div[8]/div[2]/div/div[3]/div[3]/div[7]/div/a")).click();
         driver.findElement(By.id("SKU_List_Widget_Add2CartButton_3074457345623450858_table")).click();
-        Thread.sleep(3000);
+        Thread.sleep(6000);
 
-        // Navigate to home URL to avoid errors with cart dialogue, open cart
-        driver.get("http://basspro.com");
-        driver.findElement(By.id("widget_minishopcart_bps")).click();
-        Thread.sleep(4000);
+        // Navigate to cart via sidepane
+        driver.findElement(By.id("GotoCartButton2")).click();
+        Thread.sleep(2500);
 
         // Click remove
-        driver.findElement(By.id("WC_OrderItemDetailsf_links_2_")).click();
+        driver.findElement(By.className("styles_TrashBtn__keBZx")).click();
+        Thread.sleep(4000);
 
         driver.quit();
     }
