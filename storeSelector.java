@@ -1,5 +1,3 @@
-package src;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -53,5 +51,7 @@ public class storeSelector {
         Thread.sleep(500);
         driver.findElement(By.xpath("/html/body/div[8]/div[2]/div[4]/div[3]/div[1]/div/button")).click();
         Thread.sleep(4000);
+
+        driver.quit();
     }
 }

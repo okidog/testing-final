@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/oki/IdeaProjects/testing-final">
+        <classes>
+            <class name="cart">
+                <methods>
+                    <include name="addToCart"/>
+                    <include name="changeCartQuantity"/>
+                    <include name="removeFromCart"/>
+                </methods>
+            </class>
+            <class name="category">
+                <methods>
+                    <include name="categoryDropdownTest"/>
+                    <include name="categoryMainPages"/>
+                </methods>
+            </class>
+            <class name="filterSortTest">
+                <methods>
+                    <include name="filterSortPowerReels"/>
+                    <include name="filterSortBaitcastReels"/>
+                </methods>
+            </class>
+            <class name="hotItem">
+                <methods>
+                    <include name="hotItemTest"/>
+                    <include name="hotItemViewTest"/>
+                </methods>
+            </class>
+            <class name="login">
+                <methods>
+                    <include name="loginClubPage"/>
+                    <include name="loginHeader"/>
+                </methods>
+            </class>
+            <class name="resetPassword">
+                <methods>
+                    <include name="resetPassword"/>
+                    <include name="resetViaDedicatedLogin"/>
+                </methods>
+            </class>
+            <class name="storeSelector">
+                <methods>
+                    <include name="selectFtMyers"/>
+                    <include name="selectPSL"/>
+                    <include name="selectFtLauderdale"/>
+                </methods>
+            </class>
+            <class name="subcategory">
+                <methods>
+                    <include name="subcategoryNavigation"/>
+                    <include name="subcategoryLinkNav"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

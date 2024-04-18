@@ -1,15 +1,8 @@
-package src;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
-
-/* TODO ---------------------------
-    idk scrap this probably
-    Figure out new tests, rename module potentially
- */
 
 public class resetPassword {
     @Test(priority = 1)
