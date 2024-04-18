@@ -5,11 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-/* TODO --------------------------
-    Filter and sort other categories by other sort/filter criteria
-    Move department selection code into @BeforeTest (?)
- */
-
 public class filterSortTest {
 
     @Test(priority = 1)

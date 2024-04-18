@@ -7,9 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
-/* TODO --------------------------
-    Build a test to select different store (PSL?)
- */
 public class storeSelector {
 
     public WebDriver driver;

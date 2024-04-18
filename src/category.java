@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 /* TODO --------------------------
-    (Possibly) Figure out more tests to perform with this module
+    Add tests to go to different category main pages
  */
 
 public class category {
