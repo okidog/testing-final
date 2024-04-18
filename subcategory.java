@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class subcategory {
     public WebDriver driver;
     public Actions action;
-    @Test(priority = 1)
+    @Test
     public void subcategoryNavigation() throws InterruptedException {
         // Init driver
         driver = new FirefoxDriver();
@@ -38,8 +38,8 @@ public class subcategory {
         Thread.sleep(4000);
     }
 
-    @Test(priority = 2)
-    public void subcategoryLinkNav() throws InterruptedException {
+    @Test
+    public void subcategoryNavLinks() throws InterruptedException {
         // Come back to fishing category page
         driver.navigate().back();
         Thread.sleep(1500);

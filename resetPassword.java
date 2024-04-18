@@ -5,7 +5,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class resetPassword {
-    @Test(priority = 1)
+    @Test
     public void resetPassword() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
@@ -29,7 +29,7 @@ public class resetPassword {
         driver.quit();
     }
 
-    @Test(priority = 2)
+    @Test
     public void resetViaDedicatedLogin() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();

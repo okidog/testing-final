@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 public class category {
     public WebDriver driver;
 
-    @Test(priority = 1)
+    @Test
     public void categoryDropdownTest() throws InterruptedException {
         // Init driver
         driver = new FirefoxDriver();
@@ -25,7 +25,7 @@ public class category {
         Thread.sleep(4000);
     }
 
-    @Test(priority = 2)
+    @Test
     public void categoryMainPages() throws InterruptedException{
         // Click fishing category again, then visit Fishing main page
         driver.findElement(By.id("departmentButton_3074457345616732393")).click();

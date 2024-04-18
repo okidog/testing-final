@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class hotItem {
 
-    @Test(priority = 1)
+    @Test
     public void hotItemTest() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
@@ -29,7 +29,7 @@ public class hotItem {
         driver.quit();
     }
 
-    @Test(priority = 2)
+    @Test
     public void hotItemViewTest() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();

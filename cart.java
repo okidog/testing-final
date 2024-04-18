@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class cart {
     public WebDriver driver;
     public JavascriptExecutor exe;
-    @Test(priority = 1)
+    @Test
     public void addToCart() throws InterruptedException {
         // Init driver
         driver = new FirefoxDriver();
@@ -40,14 +40,14 @@ public class cart {
         driver.findElement(By.id("GotoCartButton2")).click();
         Thread.sleep(5000);
     }
-    @Test(priority = 2)
+    @Test
     public void changeCartQuantity() throws InterruptedException {
         // Increment qty by 1
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[3]/div[2]/div/div/div[2]/div[1]/div[2]/div/div/div[2]/div[5]/div/div[1]/button")).click();
         Thread.sleep(2500);
     }
 
-    @Test(priority = 3)
+    @Test
     public void removeFromCart() throws InterruptedException {
         // Decrement quantity
         driver.findElement(By.xpath("/html/body/div[1]/div[2]/div[3]/div[2]/div/div/div[2]/div[1]/div[2]/div/div/div[2]/div[5]/div/div[1]/button[1]")).click();

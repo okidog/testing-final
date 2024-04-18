@@ -9,8 +9,8 @@ public class storeSelector {
 
     public WebDriver driver;
     public JavascriptExecutor exe;
-    @Test(priority = 1)
-    public void selectFtMyers() throws InterruptedException {
+    @Test
+    public void selectFortMyers() throws InterruptedException {
         // Init driver
         driver = new FirefoxDriver();
         exe = (JavascriptExecutor) driver;
@@ -29,7 +29,7 @@ public class storeSelector {
 
     }
 
-    @Test(priority = 2)
+    @Test
     public void selectPSL() throws InterruptedException{
         // Click store selector, input zip code, save store
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div[1]")).click();
@@ -41,7 +41,7 @@ public class storeSelector {
         Thread.sleep(4000);
     }
 
-    @Test(priority = 3)
+    @Test
     public void selectFtLauderdale() throws InterruptedException {
         // Click store selector, input zip code, save store
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div[1]")).click();

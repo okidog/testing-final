@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 public class filterSortTest {
 
-    @Test(priority = 1)
+    @Test
     public void filterSortPowerReels() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
@@ -36,7 +36,7 @@ public class filterSortTest {
         driver.quit();
     }
 
-    @Test(priority = 2)
+    @Test
     public void filterSortBaitcastReels() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();

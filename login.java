@@ -5,7 +5,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
 public class login {
-    @Test(priority = 1)
+    @Test
     public void loginClubPage() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
@@ -30,7 +30,7 @@ public class login {
 
     }
 
-    @Test(priority = 2)
+    @Test
     public void loginHeader() throws InterruptedException {
         // Init driver
         WebDriver driver = new FirefoxDriver();
