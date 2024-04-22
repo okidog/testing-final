@@ -39,7 +39,7 @@ public class subcategory {
     }
 
     @Test
-    public void subcategoryNavLinks() throws InterruptedException {
+    public void subcategoryNavlinks() throws InterruptedException {
         // Come back to fishing category page
         driver.navigate().back();
         Thread.sleep(1500);

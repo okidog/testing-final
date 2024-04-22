@@ -38,7 +38,7 @@ public class cart {
 
         // Navigate to cart via sidepane
         driver.findElement(By.id("GotoCartButton2")).click();
-        Thread.sleep(5000);
+        Thread.sleep(4500);
     }
     @Test
     public void changeCartQuantity() throws InterruptedException {

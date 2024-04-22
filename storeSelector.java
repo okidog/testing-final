@@ -10,7 +10,7 @@ public class storeSelector {
     public WebDriver driver;
     public JavascriptExecutor exe;
     @Test
-    public void selectFortMyers() throws InterruptedException {
+    public void selectDaytona() throws InterruptedException {
         // Init driver
         driver = new FirefoxDriver();
         exe = (JavascriptExecutor) driver;
@@ -22,7 +22,7 @@ public class storeSelector {
         driver.findElement(By.xpath("/html/body/div[2]/div[1]/div[2]/div[1]")).click();
         Thread.sleep(500);
         driver.findElement(By.id("storeLocInp"))
-                .sendKeys("33966", Keys.ENTER);
+                .sendKeys("32767", Keys.ENTER);
         Thread.sleep(500);
         driver.findElement(By.xpath("/html/body/div[8]/div[2]/div[4]/div[3]/div[1]/div/button")).click();
         Thread.sleep(4000);
@@ -39,6 +39,8 @@ public class storeSelector {
         Thread.sleep(500);
         driver.findElement(By.xpath("/html/body/div[8]/div[2]/div[4]/div[3]/div[1]/div/button")).click();
         Thread.sleep(4000);
+
+        driver.quit();
     }
 
     @Test
@@ -51,7 +53,5 @@ public class storeSelector {
         Thread.sleep(500);
         driver.findElement(By.xpath("/html/body/div[8]/div[2]/div[4]/div[3]/div[1]/div/button")).click();
         Thread.sleep(4000);
-
-        driver.quit();
     }
 }
